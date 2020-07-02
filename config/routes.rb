@@ -6,14 +6,19 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/Store" => "products#product_list"
-  end
-  namespace :api do
+  
+  
     get "/Store1" => "products#product_cookie"
-  end
-  namespace :api do
+  
+  
     get "/Store2" => "products#product_cake"
-  end
-  namespace :api do
+  
+  
     get "/Store3" => "products#product_banana"
+  
+  
+    get "/any_product" => "products#any_product"
+
+    get "/any_product/:product" => "products#any_product"
   end
 end
