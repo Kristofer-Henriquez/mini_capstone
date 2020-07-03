@@ -22,4 +22,26 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: product)
     render "any_product.json.jb"
   end
+
+  def guess_game
+    guess_answer = params[:number].to_i
+    if guess_answer > 32
+      @message = "you guessed too high"
+    elsif guess_answer < 32
+      @message = "you guessed too low"
+    else
+      @message = "That's correct!"
+    end
+    render "guess_game.json.jb"
+  end
+
+  def user_check
+    if params[:username] == "hugh" && params[:password] == "swordfish"
+      @message = "valid credentials"
+    else
+      @message = "invalid credentials"
+    end
+    render "check.json.jb"
+  end
+  
 end

@@ -20,5 +20,9 @@ Rails.application.routes.draw do
     get "/any_product" => "products#any_product"
 
     get "/any_product/:product" => "products#any_product"
+
+    post "/guess_game" => "products#guess_game"
+
+    post "/username" => "products#user_check"
   end
 end
