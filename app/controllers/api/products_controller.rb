@@ -32,7 +32,7 @@ class Api::ProductsController < ApplicationController
     @product.description = params[:description] || @product.description
     
     if @product.save
-    render 'show.json.jb'
+      render 'show.json.jb'
     else
       render "error.json.jb"
     end
