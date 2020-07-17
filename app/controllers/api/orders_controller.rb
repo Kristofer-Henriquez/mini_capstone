@@ -1,5 +1,7 @@
 class Api::OrdersController < ApplicationController
 
+  before_action :authenticate_user
+
   def create
     @orders = Order.new(
       product_id: params[:product_id],
